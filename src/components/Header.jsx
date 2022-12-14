@@ -12,7 +12,6 @@ class Header extends React.Component {
   componentDidMount() {
     this.setState({ loading: true }, async () => {
       const request = await getUser();
-      console.log(request);
       this.setState({
         loading: false,
         id: request,
