@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Carregando from '../pages/Carregando';
 
 class MusicCard extends React.Component {
   state = {
     loading: false,
+    favorites: false,
   };
+
+  async componentDidMount() {
+    this.setState({
+      favorites: await this.recoverSongs(),
+    });
+  }
 
   hadleChange = async ({ target: { checked } }) => {
     const { musics } = this.props;
@@ -16,12 +23,19 @@ class MusicCard extends React.Component {
     }
     this.setState({
       loading: false,
+      favorites: checked,
     });
+  };
+
+  recoverSongs = async () => {
+    const { musics: { trackId } } = this.props;
+    const songs = await getFavoriteSongs();
+    return songs.map((song) => song.trackId).includes(trackId);
   };
 
   render() {
     const { musics: { trackId, trackName, previewUrl } } = this.props;
-    const { loading } = this.state;
+    const { loading, favorites } = this.state;
     return (
       <div>
         <p>{trackName}</p>
@@ -43,6 +57,7 @@ class MusicCard extends React.Component {
             name="favoriteid"
             id="favoriteid"
             onChange={ this.hadleChange }
+            checked={ favorites }
           />
         </label>
         <div>
