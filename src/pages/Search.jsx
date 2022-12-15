@@ -52,7 +52,6 @@ class Search extends React.Component {
       disableButtonSearch,
       album,
       search, loading, failed } = this.state;
-    console.log(album);
     return (
       <div data-testid="page-search">
         <Header />
