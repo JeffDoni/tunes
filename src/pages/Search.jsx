@@ -79,8 +79,8 @@ class Search extends React.Component {
           <span>{`Resultado de álbuns de: ${search}`}</span>
 
           { loading ? (<Carregando />)
-            : (album.map((element) => (
-              <div key={ element.artistId }>
+            : (album.map((element, index) => (
+              <div key={ index }>
                 <div>
                   <p>{element.artistName}</p>
                   <p>{element.collectionName}</p>

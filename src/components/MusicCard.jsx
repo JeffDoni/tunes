@@ -17,6 +17,7 @@ class MusicCard extends React.Component {
 
   hadleChange = async ({ target: { checked } }) => {
     const { musics } = this.props;
+    console.log(checked);
     this.setState({ loading: true });
     if (checked) {
       await addSong(musics);
@@ -36,8 +37,9 @@ class MusicCard extends React.Component {
   };
 
   render() {
-    const { musics: { trackId, trackName, previewUrl } } = this.props;
+    const { musics: { trackId, trackName, previewUrl }, handleClick } = this.props;
     const { loading, favorites } = this.state;
+
     return (
       <div>
         <p>{trackName}</p>
@@ -50,15 +52,16 @@ class MusicCard extends React.Component {
           <code>audio</code>
           .
         </audio>
-        <label htmlFor="favoriteid">
+        <label htmlFor={ trackId }>
           {' '}
           Favorita
           <input
             type="checkbox"
             data-testid={ `checkbox-music-${trackId}` }
-            name="favoriteid"
-            id="favoriteid"
+            name="favorites"
+            id={ trackId }
             onChange={ this.hadleChange }
+            onClick={ handleClick }
             checked={ favorites }
           />
         </label>
@@ -76,7 +79,8 @@ MusicCard.propTypes = {
     trackId: PropTypes.number.isRequired,
     trackName: PropTypes.string.isRequired,
     previewUrl: PropTypes.string.isRequired,
-  }).isRequired,
-};
+  }),
+  handleClick: PropTypes.func.isRequired,
+}.isRequired;
 
 export default MusicCard;
