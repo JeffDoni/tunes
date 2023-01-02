@@ -1,0 +1,58 @@
+.album {
+  align-items: center;
+  background-color: white;
+  border: 1px solid;
+  display: flex;
+  height: 150vh;
+  justify-content: center;
+  width: 210vh;
+}
+
+.music {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  gap: 10px;
+  height: 70%;
+  justify-content: center;
+  margin-top: 50px;
+  overflow-y: scroll;
+  padding-top: 250px;
+  width: 80vw;
+}
+
+.info-album {
+  align-items: center;
+  background: #003be5;
+  border: 1px solid;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  font-weight: 700;
+  height: 30%;
+  justify-content: flex-end;
+  width: 80vw;
+
+}
+
+.container-album {
+  height: 90%;
+  width: 100vw;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+
+}
+
+.info-album img {
+  left: 25%;
+  position: absolute;
+  top: 11%;
+  width: 10vw;
+}

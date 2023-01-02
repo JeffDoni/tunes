@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import '../styles/Album.css';
 
 class Album extends React.Component {
   state = {
@@ -23,22 +24,36 @@ class Album extends React.Component {
   render() {
     const { selectAlbum, musics } = this.state;
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className="album">
         <Header />
-        <p data-testid="artist-name">
-          {selectAlbum ? `Artista: ${selectAlbum.artistName}` : 'VAZIO'}
-        </p>
-        <p data-testid="album-name">
-          {selectAlbum ? `Artista: ${selectAlbum.collectionName}` : 'VAZIO'}
-        </p>
-        {musics ? musics.map((music) => (
-          <MusicCard
-            key={ music.trackid }
-            musics={ music }
-          />
-        ))
-          : null}
+        <div className="container-album">
+          <div className="info-album">
+            <div>
+              <img
+                src={ selectAlbum ? `${selectAlbum.artworkUrl100}` : 'NOT FOUND' }
+                alt="Album"
+              />
+            </div>
+            <p data-testid="artist-name">
+              {selectAlbum ? `Artista: ${selectAlbum.artistName}` : 'VAZIO'}
+            </p>
+            <p data-testid="album-name">
+              {selectAlbum ? `Albúm: ${selectAlbum.collectionName}` : 'VAZIO'}
+            </p>
+          </div>
+          <div className="music">
 
+            {musics ? musics.map((music) => (
+
+              <MusicCard
+                key={ music.trackid }
+                musics={ music }
+              />
+
+            ))
+              : null}
+          </div>
+        </div>
       </div>
     );
   }

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Carregando from './Carregando';
+import '../styles/Login.css';
+import img from '../image/logo.png';
 
 class Login extends React.Component {
   state = {
@@ -39,7 +41,8 @@ class Login extends React.Component {
     if (loading) return <Carregando />;
 
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="login">
+        <img src={ img } alt="logo" />
         <form>
           <input
             type="text"

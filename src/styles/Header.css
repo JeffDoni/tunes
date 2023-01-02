@@ -1,0 +1,37 @@
+.header {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: x-large;
+  height: 100vh;
+  justify-content: space-between;
+  width: 20vw;
+
+}
+
+.header nav {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 80vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.info-user {
+  align-items: flex-end;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.image-profile {
+  border-radius: 100%;
+  width: 15%;
+}

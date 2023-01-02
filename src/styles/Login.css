@@ -1,0 +1,58 @@
+body {
+  align-items: center;
+  background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
+  background-image: url('../image/carregamento1-PhotoRoom.png');
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+}
+
+.login {
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 26px 0 #44495533;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  justify-content: center;
+  width: 750px;
+
+}
+
+.login button {
+  background: #003be5;
+  border-radius: 100px;
+  color: white;
+  height: 40px;
+  width: 400px;
+}
+
+.login input {
+  border-radius: 100px;
+  height: 40px;
+  width: 400px;
+
+}
+
+.login p {
+  background: #00d5e2;
+  border-radius: 0;
+  height: 41.78px;
+  left: 546.81px;
+  top: 277.03px;
+  width: 112.83px;
+
+}
+
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  justify-content: center;
+  width: 100%;
+}

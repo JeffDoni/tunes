@@ -1,0 +1,19 @@
+.notfound {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  height: auto;
+  justify-content: center;
+  width: 100vw;
+}
+
+.notfound p {
+  color: blue;
+  font-size: 10vw;
+}
+
+.notfound span {
+  color: white;
+  font-size: 2vw;
+
+}

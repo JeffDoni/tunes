@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import { getUser, updateUser } from '../services/userAPI';
 import Carregando from './Carregando';
+import ImgProfile from '../image/profile.png';
 
 class ProfileEdit extends React.Component {
   state = {
@@ -69,10 +70,11 @@ class ProfileEdit extends React.Component {
       buttonDisable,
     } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <div data-testid="page-profile-edit" className="profile">
         <Header />
         {loading && <Carregando />}
-        <form>
+        <form className="container">
+          <span>Nome</span>
           <input
             type="text"
             data-testid="edit-input-name"
@@ -81,6 +83,7 @@ class ProfileEdit extends React.Component {
             name="infoname"
             onChange={ this.handleChange }
           />
+          <span>Email</span>
           <input
             type="email"
             data-testid="edit-input-email"
@@ -89,16 +92,24 @@ class ProfileEdit extends React.Component {
             name="infoemail"
             onChange={ this.handleChange }
           />
+          <span>Descrição</span>
           <textarea
-            cols="30"
+            cols="50"
             rows="10"
             data-testid="edit-input-description"
             value={ infodescription }
             id="infodescription"
             name="infodescription"
             onChange={ this.handleChange }
+            placeholder="Insira sua descrição"
           />
-          <input type="image" src={ infoimage } alt={ infoname } />
+          <input
+            type="image"
+            src={ infoimage || ImgProfile }
+            alt={ infoname }
+            className="profile-image"
+          />
+          <span>Foto:</span>
           <input
             type="text"
             data-testid="edit-input-image"
@@ -106,12 +117,14 @@ class ProfileEdit extends React.Component {
             id="infoimage"
             name="infoimage"
             onChange={ this.handleChange }
+            placeholder="Insira um link de imagem"
           />
           <button
             type="button"
             data-testid="edit-button-save"
             disabled={ buttonDisable }
             onClick={ this.handleClick }
+            className="profile-btn"
           >
             Editar perfil
 

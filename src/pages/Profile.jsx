@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
 import Carregando from './Carregando';
+import '../styles/Profile.css';
+import imgProfile from '../image/profile.png';
 
 class Profile extends React.Component {
   state = {
@@ -23,14 +25,36 @@ class Profile extends React.Component {
   render() {
     const { info, loading } = this.state;
     return (
-      <div data-testid="page-profile">
+      <div data-testid="page-profile" className="profile">
         <Header />
-        {loading && <Carregando />}
-        <Link to="/profile/edit">Editar perfil</Link>
-        <p>{ info.name }</p>
-        <p>{info.email }</p>
-        <p>{info.description}</p>
-        <img src={ info.image } alt={ info.name } data-testid="profile-image" />
+        <div className="container">
+          {loading && <Carregando />}
+          <img
+            src={ info.image || imgProfile }
+            alt={ info.name }
+            data-testid="profile-image"
+            className="profile-image"
+          />
+          <div className="profile-info">
+            <div className="profile-name">
+              <span>Nome</span>
+              <p>{ info.name }</p>
+            </div>
+
+            <div className="profile-email">
+              <span>E-mail</span>
+              <p>{info.email }</p>
+            </div>
+
+            <div className="profile-description">
+              <span>Descrição</span>
+              <p>{info.description}</p>
+            </div>
+
+            <Link to="/profile/edit" className="profile-btn">Editar perfil</Link>
+          </div>
+
+        </div>
       </div>
     );
   }

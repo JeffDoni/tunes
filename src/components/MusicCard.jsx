@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Carregando from '../pages/Carregando';
+import '../styles/MusicCard.css';
 
 class MusicCard extends React.Component {
   state = {
@@ -41,20 +42,24 @@ class MusicCard extends React.Component {
     const { loading, favorites } = this.state;
 
     return (
-      <div>
-        <p>{trackName}</p>
-        <p>{trackId}</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
-        <label htmlFor={ trackId }>
-          {' '}
-          Favorita
+      <div className="card">
+        <div className="music-name">
+          <p>{trackName}</p>
+        </div>
+        <div className="music-id">
+          <p>{trackId}</p>
+        </div>
+        <div className="music-audio">
+          <audio data-testid="audio-component" src={ previewUrl } controls>
+            <track kind="captions" />
+            O seu navegador não suporta o elemento
+            {' '}
+            {' '}
+            <code>audio</code>
+            .
+          </audio>
+        </div>
+        <div>
           <input
             type="checkbox"
             data-testid={ `checkbox-music-${trackId}` }
@@ -63,8 +68,14 @@ class MusicCard extends React.Component {
             onChange={ this.hadleChange }
             onClick={ handleClick }
             checked={ favorites }
+            className="custom-checkbox"
+
           />
-        </label>
+          <label htmlFor={ trackId }>
+            {' '}
+            Favorita
+          </label>
+        </div>
         <div>
           { loading && <Carregando /> }
         </div>
