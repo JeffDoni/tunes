@@ -5,8 +5,7 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
-        " trybe-frontend "
+        "plugin:react/recommended"
     ],
     "overrides": [
     ],
