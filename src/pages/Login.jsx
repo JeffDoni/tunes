@@ -50,6 +50,7 @@ class Login extends React.Component {
             value={ loginname }
             onChange={ this.validateInfo }
             name="loginname"
+            placeholder='Digite seu nome'
           />
           <button
             data-testid="login-submit-button"

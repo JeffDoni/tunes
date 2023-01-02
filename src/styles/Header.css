@@ -25,13 +25,16 @@
 }
 
 .info-user {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   gap: 5px;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
 }
 
 .image-profile {
   border-radius: 100%;
-  width: 15%;
+  width: 25%;
 }

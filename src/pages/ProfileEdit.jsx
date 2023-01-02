@@ -126,7 +126,7 @@ class ProfileEdit extends React.Component {
             onClick={ this.handleClick }
             className="profile-btn"
           >
-            Editar perfil
+            Salvar
 
           </button>
         </form>
