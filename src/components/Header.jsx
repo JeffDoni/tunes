@@ -29,7 +29,7 @@ class Header extends React.Component {
         const { loading, id } = this.state;
         return (
             <header data-testid="header-component" className="header">
-                <img src={img} alt="logo" />
+                <img src={img} alt="logo"className='logo'/>
                 <nav>
                     <Link to="/search" data-testid="link-to-search" className="link">
                         <BiSearchAlt />

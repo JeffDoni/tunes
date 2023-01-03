@@ -1,10 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-
 .search form {
   align-items: center;
   display: flex;
@@ -32,13 +25,13 @@
 }
 
 .music-content {
+  margin-top: 10px;
   align-items: center;
   background-color: white;
   display: flex;
   flex-direction: column;
   gap: 20px;
   height: 70vh;
-  justify-content: center;
   overflow-y: scroll;
   width: 180vh;
 
@@ -80,4 +73,85 @@
 
 .container-search {
   width: 80vw;
+}
+
+@media screen and (max-width: 768px){
+  .search {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .search form {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .search input {
+    background: #ffffff80;
+    border-radius: 23px;
+    height: 40px;
+    width: 200px;
+  
+  
+  }
+  
+  .search button {
+    background: white;
+    border-radius: 23px;
+    height: 40px;
+    width: 114px;
+  }
+  
+  .music-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+  
+  }
+  
+  
+  
+  .albuns {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  
+  }
+  
+  .albuns img {
+    border-radius: 10px;
+    height: 200px;
+    width: 100%;
+  
+  }
+  
+  .cards {
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   width: 50%;
+   gap: 20px;
+  
+  }
+  
+  .container-search {
+    width: 120vw;
+    height: 120%;
+
+  }
+  
+
+
 }

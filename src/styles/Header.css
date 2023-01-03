@@ -38,3 +38,50 @@
   border-radius: 100%;
   width: 25%;
 }
+
+@media screen and (max-width: 768px){
+  .header {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    font-size: medium;
+    height: 150px;
+    justify-content: center;
+    width: 100%;
+    gap: 1px;
+  }
+  
+  .header nav {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: center;
+    width: 300px;
+  }
+  
+  .link {
+    text-decoration: none;
+  }
+  
+  .info-user {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .image-profile {
+    border-radius: 100%;
+    width: 15%;
+  }
+  .logo{
+    width: 10%;
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+}

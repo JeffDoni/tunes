@@ -6,69 +6,69 @@ import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import '../styles/Favorites.css';
 
 class Favorites extends React.Component {
-  state = {
-    loading: false,
-    favorite: [],
-  };
-
-  componentDidMount() {
-    this.setState({
-      loading: true,
-    }, async () => {
-      const songs = await getFavoriteSongs();
-      this.setState({
-        favorite: songs,
+    state = {
         loading: false,
-      });
-    });
-  }
+        favorite: [],
+    };
 
-  handleClick = ({ target: { checked, id } }) => {
-    console.log('deu certo', checked, id);
-    const { favorite } = this.state;
-    if (!checked) {
-      this.setState({
-        loading: true,
-
-      }, async () => {
-        const remove = favorite.find((music) => Number(music.trackId) === Number(id));
-        await removeSong(remove);
-        const newmusic = await getFavoriteSongs();
+    componentDidMount() {
         this.setState({
-          favorite: newmusic,
-          loading: false,
+            loading: true,
+        }, async () => {
+            const songs = await getFavoriteSongs();
+            this.setState({
+                favorite: songs,
+                loading: false,
+            });
         });
-      });
     }
-  };
 
-  render() {
-    const { loading, favorite } = this.state;
-    return (
-      <div data-testid="page-favorites" className="container-favorites">
-        <Header />
-        <div className="music">
-          <div className="title">
-            <p>Músicas Favoritas</p>
-          </div>
-          <div className="container-faixas">
-            {loading ? (<Carregando />
-            ) : (
-              favorite.map((music) => (
-                <MusicCard
-                  key={ music.trackId }
-                  musics={ music }
-                  handleClick={ this.handleClick }
+    handleClick = ({ target: { checked, id } }) => {
+        console.log('deu certo', checked, id);
+        const { favorite } = this.state;
+        if (!checked) {
+            this.setState({
+                loading: true,
 
-                />
-              ))
-            )}
-          </div>
-        </div>
+            }, async () => {
+                const remove = favorite.find((music) => Number(music.trackId) === Number(id));
+                await removeSong(remove);
+                const newmusic = await getFavoriteSongs();
+                this.setState({
+                    favorite: newmusic,
+                    loading: false,
+                });
+            });
+        }
+    };
 
-      </div>
-    );
-  }
+    render() {
+        const { loading, favorite } = this.state;
+        return (
+            <div data-testid="page-favorites" className="container-favorites">
+                <Header />
+                <div className="music">
+                    <div className="title">
+                        <p>Músicas Favoritas</p>
+                    </div>
+                    <div className="container-faixas">
+                        {loading ? (<Carregando />
+                        ) : (
+                            favorite.map((music) => (
+                                <MusicCard
+                                    key={ music.trackId }
+                                    musics={ music }
+                                    handleClick={ this.handleClick }
+
+                                />
+                            ))
+                        )}
+                    </div>
+                </div>
+
+            </div>
+        );
+    }
 }
 
 export default Favorites;

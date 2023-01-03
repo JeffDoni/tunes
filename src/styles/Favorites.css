@@ -18,3 +18,27 @@
   width: 79%;
 
 }
+
+@media screen and (max-width: 768px){
+  .container-favorites {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+  }
+  
+  .title {
+    align-items: center;
+    color: white;
+    display: flex;
+    font-size: xx-large;
+    font-weight: 700;
+    height: 20%;
+    justify-content: center;
+    position: static;
+    top: 0%;
+    width: 79%;
+  
+  }
+}

@@ -18,7 +18,6 @@
   height: 70vh;
   justify-content: center;
   margin-top: 50px;
-  overflow-y: scroll;
   width: 80vw;
 }
 
@@ -91,4 +90,99 @@ textarea {
   border: none;
   border-bottom: 1px solid;
   text-align: center;
+}
+
+@media screen and (max-width: 768px){
+  .profile {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    position: relative;
+    width: 100vw;
+  }
+  
+  .container {
+    align-items: center;
+    align-self: flex-end;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    float: none;
+    gap: 10px;
+    height: 70vh;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100vw;
+  }
+  
+  .profile-image {
+    border-radius: 100%;
+    position: static;
+    width: 10vw;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+  }
+  
+  .profile-info span {
+    color: blue;
+    font-weight: 700;
+  }
+  
+  .profile-name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 43.5px;
+    width: 288px;
+  }
+  
+  .profile-email {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 43.5px;
+    width: 288px;
+  }
+  
+  .profile-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 40vh;
+    width: 40vw;
+  }
+  
+  .profile-btn {
+    align-items: center;
+    background-color: blue;
+    border-radius: 25vw;
+    color: white;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    text-decoration: none;
+    width: 150px;
+  
+  }
+  
+  textarea {
+    border: none;
+    border-bottom: 1px solid;
+    resize: none;
+    text-align: center;
+  }
+  
+  .profile input {
+    border: none;
+    border-bottom: 1px solid;
+    text-align: center;
+  }
+  
 }

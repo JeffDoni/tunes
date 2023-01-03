@@ -13,31 +13,31 @@ const saveUser = (user) => localStorage.setItem(USER_KEY, JSON.stringify(user));
 // --------------------------------------------------------------------
 
 const simulateRequest = (response) => (callback) => {
-  setTimeout(() => {
-    callback(response);
-  }, TIMEOUT);
+    setTimeout(() => {
+        callback(response);
+    }, TIMEOUT);
 };
 
 export const getUser = () => new Promise((resolve) => {
-  let user = readUser();
-  if (user === null) {
-    user = {};
-  }
-  simulateRequest(user)(resolve);
+    let user = readUser();
+    if (user === null) {
+        user = {};
+    }
+    simulateRequest(user)(resolve);
 });
 
 export const createUser = (user) => new Promise((resolve) => {
-  const emptyUser = {
-    name: '',
-    email: '',
-    image: '',
-    description: '',
-  };
-  saveUser({ ...emptyUser, ...user });
-  simulateRequest(SUCCESS_STATUS)(resolve);
+    const emptyUser = {
+        name: '',
+        email: '',
+        image: '',
+        description: '',
+    };
+    saveUser({ ...emptyUser, ...user });
+    simulateRequest(SUCCESS_STATUS)(resolve);
 });
 
 export const updateUser = (updatedUser) => new Promise((resolve) => {
-  saveUser({ ...updatedUser });
-  simulateRequest(SUCCESS_STATUS)(resolve);
+    saveUser({ ...updatedUser });
+    simulateRequest(SUCCESS_STATUS)(resolve);
 });

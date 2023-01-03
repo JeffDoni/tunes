@@ -16,10 +16,9 @@
   gap: 10px;
   height: 70%;
   justify-content: center;
-  margin-top: 50px;
   overflow-y: scroll;
-  padding-top: 250px;
   width: 80vw;
+  padding-top: 50px;
 }
 
 .info-album {
@@ -56,3 +55,65 @@
   top: 11%;
   width: 10vw;
 }
+
+@media screen and (max-width: 768px){
+  .album {
+    align-items: center;
+    background-color: white;
+    border: 1px solid;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .music {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    float: none;
+    gap: 10px;
+    height: 50%;
+    justify-content: center;
+    overflow-y: scroll;
+    width: 90vw;
+    padding-top: none;
+    margin-top: 50px;
+    padding-top: 78px;
+  }
+  
+  .info-album {
+    align-items: center;
+    background: #003be5;
+    border: 1px solid;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    font-weight: 700;
+    height: 15%;
+    justify-content: flex-end;
+    width: 100vw;
+  
+  }
+  .info-album img{
+    position: static;
+  }
+  
+  .container-album {
+    height: 88vh;
+    width: 100vw;
+
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+  
+  }
+ }
+  
+
