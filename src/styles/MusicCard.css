@@ -58,52 +58,22 @@
     background-color: white;
     display: flex;
     height: 61.88px;
-    width: 100%;
-    border: 1px solid black;
+    width: 100vw;
   
+  }
+  
+  .music-audio {
+    width: 55%;
   }
   
   .music-name {
     width: 25%;
+    font-size: 10px;
+    text-align: right;
   }
-  
-  .custom-checkbox {
-    display: none;
+
+  .container-checkbox{
+    color: white;
   }
-  
-  .custom-checkbox + label {
-    display: inline-block;
-    font-size: 16px;
-    padding-left: 35px;
-    position: relative;
-  }
-  
-  .custom-checkbox + label:before {
-    border: 1px solid transparent;
-    border-radius: 3px;
-    content: '\1F90D';
-    display: block;
-    left: -8px;
-    padding: 10px;
-    position: absolute;
-    top: -11px;
-    transition: 0.5s ease;
-  }
-  
-  .custom-checkbox:checked + label:before {
-    background-color: transparent;
-    border: 1px solid transparent;
-  }
-  
-  .custom-checkbox:checked + label:after {
-    color: gold;
-    content: '\1F90E';
-    font-size: 18px;
-    left: 1px;
-    position: absolute;
-    top: -1px;
-    transition: 0.5s ease;
-  }
-  
-  
+
 }

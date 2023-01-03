@@ -19,12 +19,12 @@
 
 }
 
+
 @media screen and (max-width: 768px){
   .container-favorites {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    position: relative;
     width: 100vw;
   }
   
@@ -37,8 +37,8 @@
     height: 20%;
     justify-content: center;
     position: static;
-    top: 0%;
-    width: 79%;
+    width: 100%;
+    padding-top: 50px;
   
   }
 }
