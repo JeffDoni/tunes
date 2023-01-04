@@ -4,9 +4,9 @@
   display: flex;
   flex-direction: column;
   font-size: x-large;
-  height: 100vh;
+  height: 100%;
   justify-content: space-between;
-  width: 20vw;
+  width: 20%;
 
 }
 
@@ -15,9 +15,9 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  height: 80vh;
+  height: 100%;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .link {
@@ -46,10 +46,9 @@
     display: flex;
     flex-direction: row;
     font-size: medium;
-    height: 150px;
+    height: 10%;
     justify-content: center;
     width: 100%;
-    gap: 1px;
   }
   
   .header nav {
@@ -58,8 +57,9 @@
     flex-direction: row;
     height: 100px;
     justify-content: center;
-    width: 200px;
-    gap: 2px;
+    width: 40%;
+    gap: 4px;
+    margin-left: 5%;
   }
   
   .link {
@@ -71,9 +71,9 @@
     display: flex;
     gap: 5px;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     text-align: center;
-    width: 200px;
+    width: 25%;
   }
   
   .image-profile {
@@ -82,7 +82,5 @@
   }
   .logo{
     width: 10%;
-    margin-left: 10px;
-    margin-right: 5px;
   }
 }

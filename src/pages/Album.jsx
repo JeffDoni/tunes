@@ -28,7 +28,7 @@ class Album extends React.Component {
                 <Header />
                 <div className="container-album">
                     <div className="info-album">
-                        <div>
+                        <div className="container-image">
                             <img
                                 src={ selectAlbum ? `${selectAlbum.artworkUrl100}` : 'NOT FOUND' }
                                 alt="Album"

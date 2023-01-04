@@ -47,10 +47,8 @@ class Favorites extends React.Component {
         return (
             <div data-testid="page-favorites" className="container-favorites">
                 <Header />
-                <div className="music">
-                    <div className="title">
-                        <p>Músicas Favoritas</p>
-                    </div>
+                <div className="musics">
+                    <p className='title'>Músicas Favoritas</p>
                     <div className="container-faixas">
                         {loading ? (<Carregando />
                         ) : (
