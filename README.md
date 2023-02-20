@@ -18,3 +18,8 @@ Para utilizar o TrybeTunes, basta acessar o aplicativo por meio de um navegador 
 
 Se você deseja contribuir para o desenvolvimento do TrybeTunes, sinta-se à vontade para clonar o repositório do projeto e começar a implementar novas funcionalidades. Certifique-se de criar uma nova branch para suas alterações e enviar um pull request para revisão.
 
+
+### Acesse:
+
+[TrybeTunes](https://tunes-omega.vercel.app/)
+
